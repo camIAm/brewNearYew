@@ -80,9 +80,6 @@
 
 ### Edit brewery
 
-
-
-
 # Nice to have User Stories
 
 - As a beer lover, in the grocery store I would like the app to suggest beers I might like to try based on my favorites list.
@@ -90,3 +87,4 @@
 ### Favorites list
 
 ### Ability to follow breweries
+
