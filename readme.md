@@ -47,24 +47,14 @@
 POST /breweries/
 
 {
-  
-    "id" : "KR4X6i",
-    "description" : "The fact that D.C. has become a world-class beer town ...",
-    "name" : "DC Brau Brewing",
-    "createDate" : "2012-01-02 00:00:21",
-    "mailingListUrl" : "",
-    "updateDate" : "2012-01-02 20:12:39",
-    "images" : {
-      "medium" : "http://s3.amazonaws.com/",
-      "large" : "http://s3.amazonaws.com/",
-      "icon" : "http://s3.amazonaws.com/"
-    },
-    "established" : "2009",
-    "isOrganic" : "N",
-    "website" : "http://www.dcbrau.com",
-    "status" : "verified",
-    "statusDisplay" : "Verified"
-}
+    "_id": "beer_kentucky_brunch_branch_stout",
+    "name": "Kentucky Brunch Brand Stout",
+    "type": "American Double",
+    "brewer": "Toppling Goliath Brewing Company",
+    "ABV": "12.00",
+    "score": 4.83,
+    "ratings": 640
+  }
 ```
 
 
@@ -79,27 +69,14 @@ GET /breweries/:id
 
 ```
 {
-  "status" : "success",
-  "data" : {
-    "id" : "KR4X6i",
-    "description" : "The fact that D.C. has become a world-class beer town ...",
-    "name" : "DC Brau Brewing",
-    "createDate" : "2012-01-02 00:00:21",
-    "mailingListUrl" : "",
-    "updateDate" : "2012-01-02 20:12:39",
-    "images" : {
-      "medium" : "http://s3.amazonaws.com/",
-      "large" : "http://s3.amazonaws.com/",
-      "icon" : "http://s3.amazonaws.com/"
-    },
-    "established" : "2009",
-    "isOrganic" : "N",
-    "website" : "http://www.dcbrau.com",
-    "status" : "verified",
-    "statusDisplay" : "Verified"
-  },
-  "message" : "Request Successful"
-}
+    "_id": "beer_kentucky_brunch_branch_stout",
+    "name": "Kentucky Brunch Brand Stout",
+    "type": "American Double",
+    "brewer": "Toppling Goliath Brewing Company",
+    "ABV": "12.00",
+    "score": 4.83,
+    "ratings": 640
+  }
 ```
 
 ## List all breweries - GET /breweries/
@@ -113,28 +90,27 @@ GET /breweries/
 **Response**
 
 ```
-{
-  "status" : "success",
-  "data" : {
-    "id" : "KR4X6i",
-    "description" : "The fact that D.C. has become a world-class beer town ...",
-    "name" : "DC Brau Brewing",
-    "createDate" : "2012-01-02 00:00:21",
-    "mailingListUrl" : "",
-    "updateDate" : "2012-01-02 20:12:39",
-    "images" : {
-      "medium" : "http://s3.amazonaws.com/",
-      "large" : "http://s3.amazonaws.com/",
-      "icon" : "http://s3.amazonaws.com/"
+[
+  {
+      "_id": "beer_kentucky_brunch_branch_stout",
+      "name": "Kentucky Brunch Brand Stout",
+      "type": "American Double",
+      "brewer": "Toppling Goliath Brewing Company",
+      "ABV": "12.00",
+      "score": 4.83,
+      "ratings": 640
     },
-    "established" : "2009",
-    "isOrganic" : "N",
-    "website" : "http://www.dcbrau.com",
-    "status" : "verified",
-    "statusDisplay" : "Verified"
-  },
-  "message" : "Request Successful"
-},
-//// more stuff
+    {
+      "_id": "beer_good_Morning",
+      "name": "Good Morning",
+      "type": "American Double",
+      "brewer": "Tree House Brewing Company",
+      "ABV": "8.50",
+      "score": 4.74,
+      "ratings": 1024
+    },,
+  //// more stuff
+
+  ]
 ```
 
