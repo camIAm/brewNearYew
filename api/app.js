@@ -5,6 +5,7 @@ const express = require('express')
 const app = express()
 const HTTPError = require('node-http-error')
 const bodyParser = require('body-parser')
+const fetch = require('isomorphic-fetch');
 const checkRequiredFields = require('./lib/check-required-fields.js')
 const {
   not,
@@ -16,9 +17,10 @@ const {
   __,
   compose
 } = require('ramda')
+const apiKey = process.env.API_KEY
 
 app.use(bodyParser.json())
-
+console.log(`the port: ${port}`)
 app.post('/breweries', (req, res, next) => {
   // check to make sure the request body exists
   if (isEmpty(prop('body', req))) {
@@ -97,10 +99,17 @@ app.delete('/breweries/:id', (req, res, next) => {
       .send(deleteResponse)
   })
 })
+// app.get('/breweries', (req, res, next) => {   listBooks()     .then(response
+// => res.status(200).send(response))     .catch(err => new
+// HTTPError(err.status, err.message)) })
+// https://api.brewerydb.com/v2/?key=API_KEY=9b9245931f4744bce288b20c297fb537/br
+// e weries&key=9b9245931f4744bce288b20c297fb537&format=json
 app.get('/breweries', (req, res, next) => {
-  listBooks()
-    .then(response => res.status(200).send(response))
-    .catch(err => new HTTPError(err.status, err.message))
+  console.log(`https://api.brewerydb.com/v2/?key=API_KEY=${apiKey}/breweries&key=${apiKey}&format=json`)
+  // const response =
+  // fetch(`https://api.brewerydb.com/v2/?key=API_KEY=${apiKey}/breweries&key=${api
+  // Key}&format=json`) response   .then(r => r.then(a => console.log("res:", a)))
+  //   .catch(err => new HTTPError(err.status, err.message))
 })
 
 ////////////////////////  ERROR HANDLER /////////////////////
